@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emotion Detector</title>
+</head>
+<body>
+  <main>
+    <h1>Emotion Detector</h1>
+    <form method="post">
+      <label for="text">Customer feedback</label>
+      <textarea id="text" name="text" rows="5" required>{{ text }}</textarea>
+      <button type="submit">Analyze emotion</button>
+    </form>
+    {% if error %}<p role="alert">{{ error }}</p>{% endif %}
+    {% if result %}
+    <section aria-label="Emotion results">
+      <h2>Results</h2>
+      <ul>
+        <li>Anger: {{ result.anger }}</li>
+        <li>Disgust: {{ result.disgust }}</li>
+        <li>Fear: {{ result.fear }}</li>
+        <li>Joy: {{ result.joy }}</li>
+        <li>Sadness: {{ result.sadness }}</li>
+        <li>Dominant emotion: <strong>{{ result.dominant_emotion }}</strong></li>
+      </ul>
+    </section>
+    {% endif %}
+  </main>
+</body>
+</html>
