@@ -50,5 +50,4 @@ def emotion_detector(text_to_analyze: str) -> Dict[str, Any]:
     result["dominant_emotion"] = (
         max(available, key=available.get) if available else None
     )
-    result["status_code"] = response.status_code
     return result

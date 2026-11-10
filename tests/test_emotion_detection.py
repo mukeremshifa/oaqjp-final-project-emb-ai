@@ -31,7 +31,7 @@ class TestEmotionDetector(unittest.TestCase):
         result = emotion_detector("sample")
         self.assertEqual(
             set(result) ,
-            {"anger", "disgust", "fear", "joy", "sadness", "dominant_emotion", "status_code"},
+            {"anger", "disgust", "fear", "joy", "sadness", "dominant_emotion"},
         )
 
 

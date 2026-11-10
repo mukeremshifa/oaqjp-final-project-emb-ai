@@ -1,4 +1,4 @@
-# Emotion Detector Flask Application
+# Final Project
 
 An AI-based customer-feedback emotion detector using a Watson NLP-compatible
 emotion prediction service and Flask.
