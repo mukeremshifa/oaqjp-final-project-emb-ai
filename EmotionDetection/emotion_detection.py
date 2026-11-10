@@ -7,8 +7,11 @@ import requests
 
 
 WATSON_NLP_URL = os.getenv(
-    "WATSON_NLP_URL", "http://localhost:5000/model/predict"
+    "WATSON_NLP_URL",
+    "https://sn-watson-emotion.labs.skills.network/"
+    "v1/watson.runtime.nlp.v1/NlpService/EmotionPredict",
 )
+WATSON_MODEL_ID = "emotion_aggregated-workflow_lang_en_stock"
 
 
 def emotion_detector(text_to_analyze: str) -> Dict[str, Any]:
@@ -26,6 +29,7 @@ def emotion_detector(text_to_analyze: str) -> Dict[str, Any]:
 
     response = requests.post(
         WATSON_NLP_URL,
+        headers={"grpc-metadata-mm-model-id": WATSON_MODEL_ID},
         json={"raw_document": {"text": text_to_analyze}},
         timeout=30,
     )
