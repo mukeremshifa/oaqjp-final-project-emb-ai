@@ -10,7 +10,7 @@
     <h1>Emotion Detector</h1>
     <form method="post">
       <label for="text">Customer feedback</label>
-      <textarea id="text" name="text" rows="5" required>{{ text }}</textarea>
+      <textarea id="text" name="text" rows="5">{{ text }}</textarea>
       <button type="submit">Analyze emotion</button>
     </form>
     {% if error %}<p role="alert">{{ error }}</p>{% endif %}
